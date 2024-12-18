@@ -1,3 +1,6 @@
+-- Criar o banco de dados
+CREATE DATABASE db_teste_crud
+
 -- Criação da tabela NotaFiscal
 CREATE TABLE NotaFiscal (
     IdNota INT PRIMARY KEY,
