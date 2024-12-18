@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.btnNovaNF = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnReload = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.dataGridViewNotas = new System.Windows.Forms.DataGridView();
@@ -48,14 +48,15 @@
             this.btnNovaNF.UseVisualStyleBackColor = true;
             this.btnNovaNF.Click += new System.EventHandler(this.btnNovaNF_Click);
             // 
-            // button2
+            // btnEditar
             // 
-            this.button2.Location = new System.Drawing.Point(133, 12);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(99, 41);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Editar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnEditar.Location = new System.Drawing.Point(133, 12);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(99, 41);
+            this.btnEditar.TabIndex = 1;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnDelete
             // 
@@ -65,15 +66,17 @@
             this.btnDelete.TabIndex = 2;
             this.btnDelete.Text = "Excluir";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // button4
+            // btnReload
             // 
-            this.button4.Location = new System.Drawing.Point(379, 12);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(99, 41);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Recarregar";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnReload.Location = new System.Drawing.Point(379, 12);
+            this.btnReload.Name = "btnReload";
+            this.btnReload.Size = new System.Drawing.Size(99, 41);
+            this.btnReload.TabIndex = 3;
+            this.btnReload.Text = "Recarregar";
+            this.btnReload.UseVisualStyleBackColor = true;
+            this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
             // 
             // button5
             // 
@@ -109,9 +112,9 @@
             this.Controls.Add(this.dataGridViewNotas);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btnReload);
             this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnNovaNF);
             this.Name = "FormInicio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -130,9 +133,9 @@
         #endregion
 
         private System.Windows.Forms.Button btnNovaNF;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnReload;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.DataGridView dataGridViewNotas;

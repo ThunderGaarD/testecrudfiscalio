@@ -48,5 +48,51 @@ namespace testecrudfiscalio
             FormCadastro formCadastro = new FormCadastro();
             formCadastro.Show();
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            var conn = DbConnect.GetConnection();
+            try
+            {
+                if (dataGridViewNotas.SelectedRows.Count > 0)
+                {
+                    // pega a coluna selecionada
+                    DataGridViewRow row = dataGridViewNotas.SelectedRows[0];
+
+                    int idNota = Convert.ToInt32(row.Cells["IdNota"].Value);
+
+                    string sql = "DELETE FROM notafiscal WHERE idnota = @IdNota";
+
+                    conn.Execute(sql, new { IdNota = idNota });
+                    
+                     sql = "DELETE FROM item WHERE idnota = @IdNota";
+
+                    conn.Execute(sql, new { IdNota = idNota });
+                }
+            }
+            finally { 
+                conn.Close();
+                MessageBox.Show("Nota e itens apagados");
+            }
+        }
+
+        private void btnReload_Click(object sender, EventArgs e)
+        {
+            LoadNotas();
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewNotas.SelectedRows.Count > 0)
+            {
+                // pega a coluna selecionada
+                DataGridViewRow row = dataGridViewNotas.SelectedRows[0];
+
+                int idNota = Convert.ToInt32(row.Cells["IdNota"].Value);
+                FormCadastro formCadastro = new FormCadastro(idNota);
+                formCadastro.Show();
+            }
+
+        }
     }
 }
